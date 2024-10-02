@@ -29,9 +29,10 @@ struct CoffeeShop {
         .라떼: 5000,
         .아메리카노: 4500,
         .콜드브루: 6000,
-        .디카페인: 4500]
+        .디카페인: 4500
+    ]
     
-    var pickUpTable =  [Coffee?]()
+    var pickUpTable = [Coffee?]()
     var barista: Person?
     
     mutating func getOrder(is order: Coffee) {
