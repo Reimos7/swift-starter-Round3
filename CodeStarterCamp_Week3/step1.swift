@@ -23,16 +23,20 @@ enum Coffee {
 }
 
 struct CoffeeShop {
-    var sales: Double
+    var interior: String = "모던"
+    var sales: Double = 100.0
     var menu: Dictionary = [String: Int]()
     var pickUpTable =  [Coffee?]()
     var barista: Person?
     
     func getOrder(is order: Coffee) {
         print("\(order) 주문을 받았습니다.")
+        
     }
-    func makeCoffee(is order: Coffee) {
+    
+    mutating func makeCoffee(is order: Coffee) {
         print("\(order)를 제조하였습니다.")
+        pickUpTable.append(order)
     }
 }
 
