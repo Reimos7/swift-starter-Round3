@@ -8,5 +8,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let misterLee: Person = Person(appearance: "nice", personality: "kind", height: 175.3)
+let missKim: Person = Person(appearance: "nice", personality: "cool", height: 163.8)
 
+var yagombucks: CoffeeShop = CoffeeShop(sales: 500.0)
+yagombucks.barista = misterLee
