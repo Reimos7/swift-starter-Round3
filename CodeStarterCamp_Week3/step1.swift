@@ -33,7 +33,7 @@ struct CoffeeShop {
     ]
     
     var pickUpTable = [Coffee?]()
-    var barista: Person?
+    var barista: Person
     
     mutating func getOrder(is order: Coffee) {
         print("\(order) 주문을 받았습니다.")
@@ -48,5 +48,3 @@ struct CoffeeShop {
         pickUpTable.append(order)
     }
 }
-
-
