@@ -8,7 +8,11 @@
 
 import Foundation
 
-let misterLee: Person = Person(appearance: "nice", personality: "kind", height: 175.3)
-let missKim: Person = Person(appearance: "nice", personality: "cool", height: 163.8)
+let misterLee: Person = Person(appearance: "nice", personality: "kind", budget: 100000, height: 175.3)
+var missKim: Person = Person(appearance: "nice", personality: "cool", budget: 200000, height: 163.8)
 
-var yagombucks: CoffeeShop = CoffeeShop(barista: misterLee)
+var yagombucks: CoffeeShop = CoffeeShop(interior: "모던", sales: 30000000,
+                                        menu: [.라떼: 4500, .아메리카노: 4000, .디카페인: 4500, .콜드브루: 5000],
+                                        barista: misterLee)
+
+missKim.buyCoffee(from: &yagombucks, coffee: .라떼)
