@@ -25,7 +25,7 @@ class CoffeeShop {
     func takeOrder(for order: Coffee) {
         print("\(order) 주문을 받았습니다.")
         
-        guard let price = menu[order] else{
+        guard let price = menu[order] else {
             return
         }
         sales = sales + price

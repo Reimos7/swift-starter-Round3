@@ -25,6 +25,7 @@ struct Person {
             print("해당 커피가 존재하지 않습니다.")
             return
         }
+        
         if budget >= price {
             budget -= price
             shop.sales += price
