@@ -20,7 +20,17 @@ struct Person {
         self.height = height
     }
     
-    func buyCoffee() {
-    
+    mutating func buyCoffee(from shop: inout CoffeeShop, coffee: Coffee) {
+        guard let price = shop.menu[coffee] else {
+            print("해당 커피가 존재하지 않습니다.")
+            return
+        }
+        if budget >= price {
+            budget -= price
+            shop.sales += price
+            print("\(coffee)를 구매하였습니다.")
+        } else {
+            print("에산이 부족합니다")
+        }
     }
 }
