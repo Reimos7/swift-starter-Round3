@@ -8,30 +8,26 @@
 import Foundation
 
 struct Person {
-    var appearance: String
-    var personality: String
+    var appearance: String?
+    var personality: String?
     var budget: Int
-    var height: Double
+    var height: Double?
+    var name: String
     
-    init(appearance: String, personality: String, budget: Int, height: Double) {
-        self.appearance = appearance
-        self.personality = personality
-        self.budget = budget
-        self.height = height
-    }
-    
-    mutating func buyCoffee(from shop: inout CoffeeShop, coffee: Coffee) {
-        guard let price = shop.menu[coffee] else {
+    mutating func order(_ coffee: Coffee, of coffeeShop: CoffeeShop, by name: String ) {
+        guard let price = coffeeShop.menu[coffee] else {
             print("해당 커피가 존재하지 않습니다.")
             return
         }
         
         if budget >= price {
+            coffeeShop.makeCoffee(coffee, from: name)
+            
             budget -= price
-            shop.sales += price
-            print("\(coffee)를 구매하였습니다.")
+            coffeeShop.sales += price
         } else {
-            print("에산이 부족합니다")
+            var lack = price - budget
+            print("잔액이 \(lack)원만큼 부족합니다")
         }
     }
 }
